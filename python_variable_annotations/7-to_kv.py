@@ -15,4 +15,5 @@ def to_kv(k: str, v: list_type) -> Tuple[str, float]:
     Returns:
         tuple: _description_
     """
-    return tuple[k, v*v]
+    square = v * v
+    return k, square
