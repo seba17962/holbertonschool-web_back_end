@@ -2,6 +2,7 @@
 """_summary_
 """
 import time
+import asyncio
 wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
@@ -15,5 +16,6 @@ async def measure_time(n: int, max_delay: int) -> float:
     Returns:
         float: _description_
     """
-    total_time = await time.process_time(wait_n(n, max_delay))
-    return total_time / n
+    start = time.monotonic()
+    asyncio.run(wait_n(n, max_delay))
+    return ((time.monotonic() - start) / n)
