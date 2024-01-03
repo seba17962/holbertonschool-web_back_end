@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """_summary_
 """
+from typing import List
 
 
-def sum_list(input_list: list[float]) -> float:
+def sum_list(input_list: List[float]) -> float:
     """_summary_
 
     Args:
@@ -13,7 +14,5 @@ def sum_list(input_list: list[float]) -> float:
         float: _description_
     """
     add: float = 0
-    #for num in input_list:
-    #    add += num
     add = sum(input_list)
-    return float(add)
+    return add
