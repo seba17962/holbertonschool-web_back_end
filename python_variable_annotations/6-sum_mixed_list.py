@@ -2,9 +2,10 @@
 """_summary_
 """
 from typing import Union, List
-
 list_type = Union[int, float]
-def sum_mixed_list(mxd_lst: List[list_type]) ->float:
+
+
+def sum_mixed_list(mxd_lst: List[list_type]) -> float:
     """_summary_
 
     Args:
