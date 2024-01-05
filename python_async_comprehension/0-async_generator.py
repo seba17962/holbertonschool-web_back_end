@@ -2,15 +2,15 @@
 """_summary_
 """
 import asyncio
-from random import uniform
+import random
 
 
-async def async_generator():
+async def async_generator() -> float:
     """_summary_
 
     Yields:
         _type_: _description_
     """
-    for _ in range(0, 10):
+    for _ in range(10):
         await asyncio.sleep(1)
-        yield uniform(0, 10)
+        yield random.uniform(0, 10)
