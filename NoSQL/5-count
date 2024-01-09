@@ -1,0 +1,4 @@
+// count all documents
+db.school. aggregate({
+    $count: "totalDocuments"
+})
