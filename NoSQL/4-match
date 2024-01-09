@@ -1,0 +1,4 @@
+// lis all documents whit de name holberton school
+db.findeOne({
+    name="Holberton school"
+    })
