@@ -1,4 +1,4 @@
 // lis all documents whit de name holberton school
-db.findOne({
+db.school.find({
     name: "Holberton school"
     })
