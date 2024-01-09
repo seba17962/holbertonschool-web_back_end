@@ -1,6 +1,6 @@
 // deletes all documents with name="Holberton school" in the collection
 db.school.delete({
     name="Holberton school"
-}
+},
 {multi: True}
 )
