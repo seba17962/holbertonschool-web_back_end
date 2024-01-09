@@ -1,4 +1,4 @@
 // lis all documents whit de name holberton school
-db.finde({
-    name="Holberton school"
+db.find({
+    name: "Holberton school"
     })
