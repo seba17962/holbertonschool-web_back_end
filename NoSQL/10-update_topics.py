@@ -16,6 +16,6 @@ def update_topics(mongo_collection, name, topics):
         _type_: _description_
     """
     if mongo_collection is not None:
-        return mongo_collection.update({ "name": name },
+        return mongo_collection.update_many({ "name": name },
                                        { "$set": { "topics": topics } }
                                        )
