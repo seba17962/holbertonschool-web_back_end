@@ -15,5 +15,5 @@ def schools_by_topic(mongo_collection, topic):
         _type_: _description_
     """
     if mongo_collection is not None:
-        return mongo_collection.find({"topic": topic},
-                                     {"_id": 1, "name": 1, "topic": 1} )
+        return mongo_collection.find({"topics": topic},
+                                     {"_id": 1, "name": 1, "topics": 1} )
