@@ -44,7 +44,7 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         assert page > 0
         assert page_size > 0
-        if page > page_size:
+        if page > page_size or page == str or page_size == str:
             return []
         else:
             return List(index_range(page, page_size))
