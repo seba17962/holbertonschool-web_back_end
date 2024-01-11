@@ -71,12 +71,12 @@ class Server:
             next_page = page + 1
         else:
             next_page = None
+            total_pages = page
         
         if page - 1 > 0:
             prev_page = page + 1
 
         else:
-            total_pages = page
             prev_page = None
         dict= {
             "page_size": page_size,
