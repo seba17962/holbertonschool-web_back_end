@@ -42,8 +42,8 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        assert len(page) > 0
-        assert len(page_size) > 0
+        assert page > 0
+        assert page_size > 0
         if page > page_size:
             return []
         else:
