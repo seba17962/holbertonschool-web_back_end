@@ -65,25 +65,27 @@ class Server:
             return dataset[start_index:end_index]
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
-        data = self.get_page(page, page_size)
-        total_pages = int
-        if self.get_page(page + 1, page_size):
-            next_page = page + 1
-        else:
-            next_page = None
-            total_pages = page
-        
-        if page - 1 > 0:
-            prev_page = page + 1
+        """
+        Get hyper information about the dataset based on pagination.
 
-        else:
-            prev_page = None
-        dict= {
-            "page_size": page_size,
+        Args:
+            page (int): Current page number.
+            page_size (int): Number of rows per page.
+
+        Returns:
+            dict: Hyper information containing page_size, page, data, next_page, prev_page, and total_pages.
+        """
+        data = self.get_page(page, page_size)
+        total_pages = math.ceil(len(self.dataset()) / page_size)
+
+        next_page = page + 1 if page * page_size < len(self.dataset()) else None
+        prev_page = page - 1 if page > 1 else None
+
+        return {
+            "page_size": len(data),
             "page": page,
             "data": data,
             "next_page": next_page,
             "prev_page": prev_page,
             "total_pages": total_pages
         }
-        return dict
