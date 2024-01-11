@@ -5,6 +5,7 @@
 """
 from pymongo import MongoClient
 
+
 if __name__ == "__main__":
     """
         Database: logs
@@ -15,6 +16,7 @@ if __name__ == "__main__":
 
     n_logs = nginx_collection.count_documents({})
     print(f'{n_logs} logs')
+
     methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
     print('Methods:')
     for method in methods:
