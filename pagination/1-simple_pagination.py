@@ -48,4 +48,6 @@ class Server:
             if page > page_size:
                 return []
             else:
-                return List(index_range(page, page_size))
+                return [index_range(page, page_size)]
+        else:
+            raise AssertionError ("Page and page_size must be ints")
