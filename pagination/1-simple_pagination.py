@@ -42,9 +42,10 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        assert int(page) > 0
-        assert int(page_size) > 0
-        if page > page_size or page == str or page_size == str:
-            return []
-        else:
-            return List(index_range(page, page_size))
+        if page is not str or page_size is not str:
+            assert page > 0
+            assert page_size > 0
+            if page > page_size:
+                return []
+            else:
+                return List(index_range(page, page_size))
