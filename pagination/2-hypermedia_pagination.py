@@ -73,12 +73,16 @@ class Server:
             page_size (int): Number of rows per page.
 
         Returns:
-            dict: Hyper information containing page_size, page, data, next_page, prev_page, and total_pages.
+            dict: Hyper information containing page_size,
+            page, data, next_page, prev_page, and total_pages.
         """
         data = self.get_page(page, page_size)
         total_pages = math.ceil(len(self.dataset()) / page_size)
 
-        next_page = page + 1 if page * page_size < len(self.dataset()) else None
+        if page * page_size < len(self.dataset()):
+            next_page = page + 1
+        else:
+            None
         prev_page = page - 1 if page > 1 else None
 
         return {
