@@ -66,14 +66,17 @@ class Server:
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         data = self.get_page(page, page_size)
+        total_pages = int
         if self.get_page(page + 1, page_size):
             next_page = page + 1
         else:
             next_page = None
-            total_pages = page
-        if self.get_page(page - 1, page_size):
+        
+        if page - 1 > 0:
             prev_page = page + 1
+
         else:
+            total_pages = page
             prev_page = None
         dict= {
             "page_size": page_size,
@@ -83,3 +86,4 @@ class Server:
             "prev_page": prev_page,
             "total_pages": total_pages
         }
+        return dict
