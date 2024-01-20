@@ -14,12 +14,8 @@ export default class HolbertonCourse {
     this._students = [...students];
 
     Object.defineProperty(this, 'name', {
-      get: () => {
-        console.log('Getting the value of name');
-        return this._name;
-      },
+      get: () => this._name,
       set: (newValue) => {
-        console.log('Setting the value of name to', newValue);
         if (typeof newValue === 'string') {
           this._name = newValue;
         } else {
@@ -29,12 +25,8 @@ export default class HolbertonCourse {
     });
 
     Object.defineProperty(this, 'length', {
-      get: () => {
-        console.log('Getting the value of length');
-        return this._length;
-      },
+      get: () => this._length,
       set: (newValue) => {
-        console.log('Setting the value of length to', newValue);
         if (typeof newValue === 'number') {
           this._length = newValue;
         } else {
@@ -44,14 +36,10 @@ export default class HolbertonCourse {
     });
 
     Object.defineProperty(this, 'students', {
-      get: () => {
-        console.log('Getting the value of students');
-        return [...this._students]; 
-      },
+      get: () => [...this._students], // Return a copy of the array
       set: (newValue) => {
-        console.log('Setting the value of students to', newValue);
         if (Array.isArray(newValue) && newValue.every(student => typeof student === 'string')) {
-          this._students = [...newValue];
+          this._students = [...newValue]; // Using spread syntax to create a copy of the array
         } else {
           console.error('Invalid value type. Must be an array of strings.');
         }
