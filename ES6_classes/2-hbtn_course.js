@@ -4,9 +4,9 @@ export default class HolbertonCourse {
       throw new Error('name must be a string.');
     }
     if (typeof length !== 'number' || length <= 0) {
-      throw new Error('length must be a positive number')
+      throw new Error('length must be a positive number');
     }
-    if (!Array.isArray(students) || !students.every(item => typeof item === 'string')) {
+    if (!Array.isArray(students) || !students.every((item) => typeof item === 'string')) {
       throw new Error('students must be an array of strings.');
     }
     this._name = name;
@@ -36,10 +36,10 @@ export default class HolbertonCourse {
     });
 
     Object.defineProperty(this, 'students', {
-      get: () => [...this._students], // Return a copy of the array
+      get: () => [...this._students],
       set: (newValue) => {
-        if (Array.isArray(newValue) && newValue.every(student => typeof student === 'string')) {
-          this._students = [...newValue]; // Using spread syntax to create a copy of the array
+        if (Array.isArray(newValue) && newValue.every((student) => typeof student === 'string')) {
+          this._students = [...newValue];
         } else {
           console.error('Invalid value type. Must be an array of strings.');
         }
