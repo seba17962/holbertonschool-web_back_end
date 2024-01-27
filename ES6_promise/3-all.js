@@ -1,6 +1,6 @@
 import { uploadPhoto, createUser } from './utils';
 
-export function handleProfileSignup() {
+export default function handleProfileSignup() {
   const photoPromise = uploadPhoto();
   const userPromise = createUser();
 
