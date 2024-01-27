@@ -6,7 +6,7 @@ export default function handleProfileSignup() {
 
   Promise.all([photoPromise, userPromise])
     .then(([photoResult, userResult]) => {
-      return `${photoResult.body} ${userResult.firstName} ${userResult.lastName}`;
+      console.log(`${photoResult.body} ${userResult.firstName} ${userResult.lastName}`);
     })
 
     .catch(() => {
