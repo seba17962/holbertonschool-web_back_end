@@ -1,6 +1,6 @@
 import { uploadPhoto, createUser } from './utils';
 
-export default function handleProfileSignup() {
+export function handleProfileSignup() {
   const photoPromise = uploadPhoto();
   const userPromise = createUser();
 
@@ -8,8 +8,7 @@ export default function handleProfileSignup() {
     .then(([photoResult, userResult]) => {
       console.log(`${photoResult.body} ${userResult.firstName} ${userResult.lastName}`);
     })
-
-    .catch(() => {
-      console.log(`Signup system offline`);
-});
+    .catch((error) => {
+      console.log('Signup system offline');
+    });
 }
