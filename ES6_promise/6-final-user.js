@@ -9,5 +9,5 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     .then((results) => results.map((res) => ({
       status: res.status,
       value: res.value || res.reason.toString(),
-  })));
+    })));
 }
